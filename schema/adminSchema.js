@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
+
 
 
 //schema to visualize how a database should be structured
@@ -11,10 +11,6 @@ const adminSchema = new mongoose.Schema(
     email: { type: String, required: true },
     password: { type: String, required: true },
     mobile: { type: String, required: true },
-    address: { type: String, required: true },
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    pincode: { type: String, required: true },
     status: { type: String, default: "y" },
     role: { type: String, default: "Admin" },
     createdAt: { type: Date, default: Date.now() },

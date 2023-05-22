@@ -24,6 +24,30 @@ const {
 mongoose.connect(dbUrl);
 
 
+//to create a new admin
+router.post("/admin-sign-up", async (req, res) => {
+  try {
+    let user = await adminModel.findOne({ email: req.body.email });
+    if (!user) {
+      req.body.password = await hashPassword(req.body.password);
+      let doc = new adminModel(req.body);
+      await doc.save();
+      res.status(201).send({
+        message: "Admin added successfully",
+      });
+    } else {
+      res.status(400).send({
+        message: "Email already exists",
+      });
+    }
+  } catch (error) {
+    res.status(500).send({
+      message: "Internal server error",
+      error,
+    });
+  }
+});
+
 // admin login
 router.post("/adminLogin", async (req, res) => {
   try {
