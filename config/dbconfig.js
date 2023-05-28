@@ -1,5 +1,6 @@
-const dbName="Rentify";
+const dbName=process.env.DB_NAME;
 
-const dbUrl=`mongodb+srv://Vishnupriya:Vishnu12345@cluster0.x4j7bh9.mongodb.net/${dbName}`
+const dbUrl=`${process.env.DB_URL}/${dbName}`
 
 module.exports={dbName,dbUrl}
+
