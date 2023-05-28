@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 //jwt for authentication
 const jwt = require("jsonwebtoken");
 
+require('dotenv').config()
+
 
 //Hashing to turn password (or any other piece of data) into a short string of letters and/or numbers using an encryption algorithm.
 const hashPassword = async (password) => {
