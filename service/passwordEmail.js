@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config(); 
 
 const passwordEmail = async ({ email, firstName, lastName, message }) => {
   let mailTranspoter = nodemailer.createTransport({
