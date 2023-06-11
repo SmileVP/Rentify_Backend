@@ -25,7 +25,7 @@ const {
 } = require("../config/auth");
 
 //frontend url
-let url = "http://localhost:3000";
+let url = "https://aquamarine-gnome-aca14d.netlify.app";
 
 //to connect to db
 mongoose.connect(dbUrl);
