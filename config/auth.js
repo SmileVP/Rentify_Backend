@@ -60,6 +60,12 @@ const validate = async (req, res, next) => {
   }
 };
 
+//decode forgot password token
+const decodePasswordToken = (token) => {
+  let data = jwt.decode(token);
+  return data;
+};
+
 //middleware function for role admin authentication
 const roleAdmin= async (req, res, next) => {
     try {
@@ -93,6 +99,7 @@ module.exports = {
   hashCompare,
   createToken,
   decodeToken,
+  decodePasswordToken,
   validate,
   roleAdmin
 };
